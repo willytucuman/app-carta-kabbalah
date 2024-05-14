@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Quisco Next.js con App Router y Prisma",
-  description: "Quisco Next.js con App Router y Prisma",
+  title: "Kabbalah carta mobile",
+  description: "Carta mobile app con next",
 };
 
 export default function RootLayout({
