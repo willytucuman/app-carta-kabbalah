@@ -3,6 +3,7 @@ import useSWR from "swr";
 import Logo from "@/components/ui/Logo";
 import { OrderWithProducts } from "@/src/types";
 import LatestOrderItem from "@/components/order/LatestOrderItem";
+export const dynamic = 'force-dynamic'
 
 
 export default function OrdersPage() {
