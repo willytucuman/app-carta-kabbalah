@@ -20,7 +20,7 @@ export const categories = [
         name: "Tortas"
       },
       {
-        slug: "galletas",
+        slug: "bebida",
         name: "Bebidas"
       }
 ]
