@@ -5,7 +5,7 @@ export const categories = [
       },
       {
         slug: "hamburguesa",
-        name: "Hamburguesas"
+        name: "Minutas"
       },
       {
         slug: "pizza",
@@ -13,14 +13,14 @@ export const categories = [
       },
       {
         slug: "dona",
-        name: "Donas"
+        name: "Panaderia"
       },
       {
         slug: "pastel",
-        name: "Pasteles"
+        name: "Tortas"
       },
       {
         slug: "galletas",
-        name: "Galletas"
+        name: "Bebidas"
       }
 ]
