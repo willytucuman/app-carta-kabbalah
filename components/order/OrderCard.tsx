@@ -1,14 +1,30 @@
-import { completeOrder } from "@/actions/complete-order-action"
-import { OrderWithProducts } from "@/src/types"
-import { formatCurrency } from "@/src/utils"
+import { completeOrder } from "@/actions/complete-order-action";
+import { OrderWithProducts } from "@/src/types";
+import { formatCurrency } from "@/src/utils";
+import { toast } from 'react-toastify';
+import { useState } from 'react';
 
 type OrderCardProps = {
     order: OrderWithProducts
 }
 
 export default function OrderCard({ order }: OrderCardProps) {
+    const [loading, setLoading] = useState(false);
 
- 
+    const handleSubmit = async (event:any) => {
+        event.preventDefault();
+        setLoading(true);
+        const form = event.target;
+        const formData = new FormData(form);
+        try {
+            await completeOrder(formData);
+            setLoading(false)
+        } catch (error) {
+            setLoading(false);
+            toast.error('Failed to complete order.');
+        }
+    }
+
     return (
         <section
             aria-labelledby="summary-heading"
@@ -17,9 +33,9 @@ export default function OrderCard({ order }: OrderCardProps) {
             <p className='text-2xl font-medium text-gray-900'>Cliente: {order.name} </p>
             <p className='text-lg font-medium text-gray-900'>Productos Ordenados:</p>
             <dl className="mt-6 space-y-4">
-                {order.orderProducts.map(product =>(
-                    <div 
-                        key={product.productId} 
+                {order.orderProducts.map(product => (
+                    <div
+                        key={product.productId}
                         className="flex items-center gap-2 border-t border-gray-200 pt-4"
                     >
                         <dt className="flex items-center text-sm text-gray-600">
@@ -34,18 +50,20 @@ export default function OrderCard({ order }: OrderCardProps) {
                 </div>
             </dl>
 
-            <form action={completeOrder}>
-                <input 
+            <form onSubmit={handleSubmit}>
+                <input
                     type="hidden"
                     value={order.id}
                     name="order_id"
                 />
-                <input
+                <button
                     type="submit"
                     className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer"
-                    value='Marcar Orden Completada'
-                />
+                    disabled={loading}
+                >
+                    {loading ? 'Processing...' : 'Marcar Orden Completada'}
+                </button>
             </form>
         </section>
-    )
+    );
 }
