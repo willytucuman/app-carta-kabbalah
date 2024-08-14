@@ -8,14 +8,14 @@ import { useParams } from "next/navigation"
 export default function EditProductForm({children}: {children : React.ReactNode}) {
     const router = useRouter()
     const params = useParams()
-    const id = +params.id!
+    const id = params ? +params.id! : null
 
     const handleSubmit = async (formData: FormData) => {
         const data = {
             name: formData.get('name'),
             price: formData.get('price'),
             categoryId: formData.get('categoryId'),
-            image: formData.get('image')
+            // image: formData.get('image')
         }
         
         const result = ProductSchema.safeParse(data)

@@ -13,7 +13,7 @@ export default function AddProductForm({children}: {children : React.ReactNode})
             name: formData.get('name'),
             price: formData.get('price'),
             categoryId: formData.get('categoryId'),
-            image: formData.get('image')
+            // image: formData.get('image')
         }
         const result = ProductSchema.safeParse(data)
         if(!result.success) {

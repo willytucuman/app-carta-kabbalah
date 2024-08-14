@@ -1,7 +1,7 @@
 export const categories = [
     {
         slug: "cafe",
-        name: "Café"
+        name: "Cafetería"
       },
       {
         slug: "hamburguesa",
@@ -13,11 +13,11 @@ export const categories = [
       },
       {
         slug: "dona",
-        name: "Panaderia"
+        name: "Pastelería"
       },
       {
         slug: "pastel",
-        name: "Tortas"
+        name: "Menú diario"
       },
       {
         slug: "bebida",

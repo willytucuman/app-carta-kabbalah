@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 export const OrderSchema = z.object({
     name: z.string()
-            .min(1, 'Tu Nombre es Obligatorio'),
+            .min(1, 'Numero de mesa obligatorio'),
     total: z.number()
             .min(1, 'Hay errores en la orden'),
     order: z.array(z.object({
@@ -40,5 +40,5 @@ export const ProductSchema = z.object({
         .transform((value) => parseInt(value)) 
         .refine((value) => value > 0, { message: 'La Categoría es Obligatoria' })
         .or(z.number().min(1, {message: 'La Categoría es Obligatoria' })),
-    image: z.string().min(1, {message: 'La Imagen es obligatoria'})
+    // image: z.string().min(1, {message: 'La Imagen es obligatoria'})
 })

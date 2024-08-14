@@ -254,37 +254,37 @@ export const products = [
       {
         name: "4 Rebanadas de Pay de Queso",
         price: 69.9,
-        image: "pastel_01",
+        image: "menuDiario",
         categoryId: 5
       },
       {
         name: "Waffle Especial",
         price: 49.9,
-        image: "pastel_02",
+        image: "menuDiario",
         categoryId: 5
       },
       {
         name: "Croissants De la casa",
         price: 39.9,
-        image: "pastel_03",
+        image: "menuDiario",
         categoryId: 5
       },
       {
         name: "Pay de Queso",
         price: 19.9,
-        image: "pastel_04",
+        image: "menuDiario",
         categoryId: 5
       },
       {
         name: "Pastel de Chocolate",
         price: 29.9,
-        image: "pastel_05",
+        image: "menuDiario",
         categoryId: 5
       },
       {
         name: "Rebanada Pastel de Chocolate",
         price: 29.9,
-        image: "pastel_06",
+        image: "menuDiario",
         categoryId: 5
       },
       {

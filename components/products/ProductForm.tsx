@@ -1,5 +1,5 @@
  import { prisma } from "@/src/lib/prisma"
-import ImageUpload from "./ImageUpload"
+// import ImageUpload from "./ImageUpload"
 import { Product } from "@prisma/client"
 
 async function getCategories() {
@@ -19,7 +19,7 @@ export default async function ProductForm({product}: ProductFormProps) {
                 <label
                     className="text-slate-800"
                     htmlFor="name"
-                >Nombre:</label>
+                >Name:</label>
                 <input
                     id="name"
                     type="text"
@@ -65,9 +65,9 @@ export default async function ProductForm({product}: ProductFormProps) {
                 </select>
             </div>
 
-            <ImageUpload 
+            {/* <ImageUpload 
                 image={product?.image}
-            />
+            /> */}
         </>
     )
 }

@@ -17,11 +17,11 @@ export default function OrderSummary() {
 
   const handleInputChange = (event:any) => {
     const value = event.target.value
-    if (/^[a-zA-Z\s]*$/.test(value)) {
+    if (/^[0-9]+$/.test(value)) {
       setName(value)
       setNameError('')
     } else {
-      setNameError('El nombre solo puede contener letras y espacios.')
+      setNameError('Solo puede ingresar un numero de mesa valido')
     }
   }
 
@@ -51,7 +51,7 @@ export default function OrderSummary() {
       return
     }
 
-    toast.success('Pedido Realizado Correctamente')
+    toast.success('Pedido Realizado Correctamente') 
     clearOrder()
     setName("")
   }
@@ -83,7 +83,7 @@ export default function OrderSummary() {
             <div>
               <input
                 type="text"
-                placeholder="Tu Nombre"
+                placeholder="Tu mesa"
                 className="bg-white border border-gray-100 p-2 w-full"
                 name="name"
                 maxLength={50}
