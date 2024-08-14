@@ -9,7 +9,7 @@ type ProductCardProps = {
 
 export default function ProductCard({product} : ProductCardProps) {
 
-  const imagePath = getImagePath(product.image)
+  const imagePath = getImagePath(product.image ? product.image : undefined) 
 
   return (
     <div className="border bg-white w-100">

@@ -8,7 +8,7 @@ import { useParams } from "next/navigation"
 export default function EditProductForm({children}: {children : React.ReactNode}) {
     const router = useRouter()
     const params = useParams()
-    const id = params ? +params.id! : null
+    const id = params ? +params.id! : undefined
 
     const handleSubmit = async (formData: FormData) => {
         const data = {

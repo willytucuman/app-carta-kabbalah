@@ -25,10 +25,11 @@ export default async function OrderPage({params}: { params: { category : string 
     
       <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-4 gap-4 items-start">
           {products.map(product => (
+            product.price <= 10 ? <></> :   
             <ProductCard 
-              key={product.id}
-              product={product}
-            />
+            key={product.id}
+            product={product}
+          />
           ))}
       </div>
     </>

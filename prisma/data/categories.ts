@@ -16,7 +16,7 @@ export const categories = [
         name: "Pastelería"
       },
       {
-        slug: "pastel",
+        slug: "menudiario",
         name: "Menú diario"
       },
       {

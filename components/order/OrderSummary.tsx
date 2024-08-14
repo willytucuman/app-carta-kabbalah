@@ -51,7 +51,7 @@ export default function OrderSummary() {
       return
     }
 
-    toast.success('Pedido Realizado Correctamente') 
+    toast.success('Pedido Realizado Correctamente',{autoClose:1500}) 
     clearOrder()
     setName("")
   }

@@ -5,6 +5,6 @@ export function formatCurrency(amount: number) {
     }).format(amount)
 }
 
-export function getImagePath(imagePath: string) {
+export function getImagePath(imagePath?: string) {
      return `/products/${imagePath}.jpg`
 }

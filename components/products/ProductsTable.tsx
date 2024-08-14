@@ -4,9 +4,9 @@ import { formatCurrency } from "@/src/utils"
 import Link from "next/link"
 import { useState } from "react"
 import Modal from "../modal"
-import { deleteProduct } from "@/actions/delete-order-actions"
-import { toast } from "react-toastify"
-import { ProductSchema } from "@/src/schema"
+// import { deleteProduct } from "@/actions/delete-order-actions"
+// import { toast } from "react-toastify"
+// import { ProductSchema } from "@/src/schema"
 
 type ProductTableProps = {
     products: ProductsWithCategory
@@ -14,46 +14,46 @@ type ProductTableProps = {
 
 export default function ProductTable({ products }: ProductTableProps) {
     const [isModalVisible, setModalVisible] = useState(false);
-    const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
-    const [productToDelete,setProductToDelete] = useState<any>(null)
+    // const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
+    // const [productToDelete,setProductToDelete] = useState<any>(null)
 
-    const handleCancel = () => {
-        setModalVisible(false);
-        setSelectedProductId(null);
-    }
+    // const handleCancel = () => {
+    //     setModalVisible(false);
+    //     setSelectedProductId(null);
+    // }
 
-    const handleConfirm = async () => {
-        if (selectedProductId) {
-            console.log(`Estamos borrando el producto ${productToDelete}`);
-            // Aquí llamarías a la función para borrar el producto
-           const response = await deleteProduct(productToDelete,selectedProductId);
-           if(response?.errors){
-            response.errors.forEach(issue => {
-                toast.error(issue.message)
-            })
-            toast.error('No se pudo eliminar correctamente')
+    // const handleConfirm = async () => {
+    //     if (selectedProductId) {
+    //         console.log(`Estamos borrando el producto ${productToDelete}`);
+    //         // Aquí llamarías a la función para borrar el producto
+    //        const response = await deleteProduct(productToDelete,selectedProductId);
+    //        if(response?.errors){
+    //         response.errors.forEach(issue => {
+    //             toast.error(issue.message)
+    //         })
+    //         toast.error('No se pudo eliminar correctamente')
 
-            return 
-           }
-            toast.success('Producto Eliminado correctamente')
-            setModalVisible(false);
-        }
-    }
+    //         return 
+    //        }
+    //         toast.success('Producto Eliminado correctamente')
+    //         setModalVisible(false);
+    //     }
+    // }
 
-    const openModal = (product:any,productId: number) => {
-        setSelectedProductId(productId);
-        setProductToDelete(product)
-        setModalVisible(true);
-    }
+    // const openModal = (product:any,productId: number) => {
+    //     setSelectedProductId(productId);
+    //     setProductToDelete(product)
+    //     setModalVisible(true);
+    // }
 
     return (
         <div className="px-4 sm:px-6 lg:px-8 mt-20">
-            <Modal
+            {/* <Modal
                 isVisible={isModalVisible}
                 onConfirm={handleConfirm}
                 onCancel={handleCancel}
                 title="¿Estás seguro de que deseas eliminar este producto?"
-            />
+            /> */}
             <div className="mt-8 flow-root ">
                 <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8 bg-white p-5 ">

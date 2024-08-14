@@ -1,5 +1,4 @@
 import { OrderWithProducts } from "@/src/types"
-import {deleteOrder} from '@/actions/delete-order-actions'
 import { formatDateToArgentineTime } from "@/src/utils/formatDate"
 type LatestOrderItemProps = {
     order: OrderWithProducts
